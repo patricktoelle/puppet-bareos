@@ -16,7 +16,7 @@
 #
 class bareos::repository inherits bareos {
 
-  if ($bool_manage_repository){
+  if ($::bareos::bool_manage_repository){
       case $::operatingsystem {
 
         'redhat','centos','fedora','Scientific','OracleLinux': {
@@ -28,10 +28,10 @@ class bareos::repository inherits bareos {
 
         'Debian','Ubuntu': {
           apt::source { 'bareos':
-            location => "http://download.bareos.org/bareos/release/${bareos::repo_flavour}/${bareos::repo_distro}",
+            location => "http://download.bareos.org/bareos/release/${::bareos::repo_flavour}/${::bareos::repo_distro}",
             release  => '/',
             repos    => ' ',
-            key      => '093BFBA2',
+            key      => '0143857D9CE8C2D182FE2631F93C028C093BFBA2',
           }
         }
         default: { fail("${::hostname}: This module does not support operatingsystem ${::operatingsystem}") }
