@@ -231,11 +231,12 @@ class bareos::director {
   Bareos::Director::Job <<| |>>
 
   bareos::director::storage { $::bareos::storage_name:
-    device     => 'FileStorage',
-    media_type => 'File',
-    address    => $::bareos::storage_address,
-    password   => $::bareos::storage_password,
-    sd_port    => $::bareos::storage_port,
+    device         => 'FileStorage',
+    media_type     => 'File',
+    address        => $::bareos::storage_address,
+    password       => $::bareos::storage_password,
+    sd_port        => $::bareos::storage_port,
+    max_concurrent => $::bareos::storage_max_concurrent,
   }
 
   bareos::director::catalog { 'MyCatalog': }
