@@ -17,6 +17,7 @@ define bareos::director::fileset (
   $ignorecase = '',
   $include = '',
   $exclude = '',
+  $plugin = '',
   $ignore_fileset_changes = '',
   $options_hash = {},
   $template = 'bareos/director/fileset.conf.erb'
@@ -72,4 +73,3 @@ define bareos::director::fileset (
   }
 
 }
-

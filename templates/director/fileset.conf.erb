@@ -51,6 +51,9 @@ FileSet {
     File = <%=filesets_include  %>
 <% end -%>
 <% end -%>
+<% if @plugin != '' -%>
+      Plugin = "<%= @plugin %>"
+<% end -%>
   }
   Exclude {
 <% if @array_filesets_exclude != [] -%>
