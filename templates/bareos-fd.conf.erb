@@ -21,6 +21,9 @@ FileDaemon {
 <% if scope.lookupvar('bareos::client_max_concurrent') != '' -%>
   MaximumConcurrentJobs = <%= scope.lookupvar('bareos::client_max_concurrent') %>
 <% end -%>
+<% if scope.lookupvar('bareos::plugindir') != '' -%>
+  Plugin Directory = <%= scope.lookupvar('bareos::plugindir') %>
+<% end -%>
   FDAddress = <%= scope.lookupvar('bareos::client_address') %>
   Heartbeat Interval = <%= scope.lookupvar('bareos::heartbeat_interval') %>
 }

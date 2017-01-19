@@ -113,6 +113,7 @@ class bareos (
   $debug                   = params_lookup( 'debug' , 'global' ),
   $audit_only              = params_lookup( 'audit_only' , 'global' ),
   $noops                   = params_lookup( 'noops' ),
+  $plugindir               = '',
 
   # Parameterized definitions for hiera
   $catalogs                = {},
@@ -274,6 +275,16 @@ class bareos (
     owner   => $bareos::process_user,
     group   => $bareos::process_group,
     require => User[$bareos::process_user],
+  }
+
+  if $::bareos::plugindir != '' {
+      file { $::bareos::plugindir:
+        ensure  => directory,
+        owner   => $::bareos::process_user,
+        group   => $::bareos::process_group,
+        recurse => true,
+        require => User[$::bareos::process_user],
+      }
   }
 
   ### Managed resources
