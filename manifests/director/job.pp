@@ -31,7 +31,8 @@ define bareos::director::job (
   $client_run_after_job = '',
   $run_after_job = '',
   $options_hash = {},
-  $template = 'bareos/director/job.conf.erb'
+  $template = 'bareos/director/job.conf.erb',
+  $dir_plugin_options = '',
 ) {
 
   include bareos

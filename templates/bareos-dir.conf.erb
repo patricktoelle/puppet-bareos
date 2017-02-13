@@ -11,6 +11,10 @@ Director {
   Messages = "<%= scope.lookupvar('bareos::default_messages') %>"
   DirAddress = <%= scope.lookupvar('bareos::director_address') %>
   HeartbeatInterval = <%= scope.lookupvar('bareos::heartbeat_interval') %>
+<% if scope.lookupvar('bareos::plugindir') != '' -%>
+  Plugin Directory = <%= scope.lookupvar('bareos::plugindir') %>
+  Plugin Names = "python" 
+<% end -%>
 }
 
 # Restricted Console, used by tray-monitor for Director status.

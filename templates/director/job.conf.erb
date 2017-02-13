@@ -59,4 +59,7 @@ Job {
 <% if @run_after_job != '' -%>
   RunAfterJob = "<%= @run_after_job %>"
 <% end -%>
+<% if @dir_plugin_options != '' -%>
+  DIR Plugin Options = "<%= @dir_plugin_options %>"
+<% end -%>
 }
