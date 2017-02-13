@@ -95,6 +95,7 @@ class bareos::director {
     hasstatus => $bareos::service_status,
     pattern   => $bareos::director_process,
     require   => Package[$bareos::director_package],
+    restart   => '/bin/echo "reload" | /usr/sbin/bconsole',
     noop      => $bareos::noops,
   }
 
