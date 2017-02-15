@@ -228,8 +228,8 @@ class bareos::director {
       ];
   }
 
-  Bareos::Director::Client <<| |>>
-  Bareos::Director::Job <<| |>>
+  Bareos::Director::Client <<| tag == "env-${::environment}" |>>
+  Bareos::Director::Job <<| tag == "env-${::environment}" |>>
 
   bareos::director::storage { $::bareos::storage_name:
     device         => 'FileStorage',
