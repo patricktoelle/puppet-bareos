@@ -12,4 +12,10 @@ Device {
   AutomaticMount = <%= @automatic_mount %>
   RemovableMedia = <%= @removable_media %>
   AlwaysOpen = <%= @always_open %>
+<% if @auto_deflate != '' -%>
+  AutoDeflate = <%= @auto_deflate %>
+<% end -%>
+<% if @auto_inflate != '' -%>
+  AutoInflate = <%= @auto_inflate %>
+<% end -%>
 }

@@ -12,6 +12,8 @@ define bareos::storage::device (
   $removable_media = 'no' ,
   $always_open     = false,
   $source          = '',
+  $auto_deflate    = '',
+  $auto_inflate    = '',
   $options_hash    = {},
   $template        = 'bareos/storage/device.conf.erb'
 ) {
