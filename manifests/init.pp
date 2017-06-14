@@ -114,6 +114,7 @@ class bareos (
   $audit_only              = params_lookup( 'audit_only' , 'global' ),
   $noops                   = params_lookup( 'noops' ),
   $plugindir               = '',
+  $send_messages_by_mail   = false,
 
   # Parameterized definitions for hiera
   $catalogs                = {},

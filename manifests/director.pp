@@ -166,11 +166,20 @@ class bareos::director {
     }
   }
 
-  bareos::director::messages {
-    [ 'Standard', 'Daemon' ]:
-      mail_command => '/usr/bin/bsmtp',
-      mail_to      => 'root@localhost',
-      mail_from    => 'bareos@localhost',
+  if $bareos::send_messages_by_mail {
+    bareos::director::messages {
+      [ 'Standard', 'Daemon' ]:
+        mail_command => '/usr/bin/bsmtp',
+        mail_to      => 'root@localhost',
+        mail_from    => 'bareos@localhost',
+    }
+  } else {
+    bareos::director::messages {
+      [ 'Standard', 'Daemon' ]:
+        mail_command => '/bin/true',
+        mail_to      => 'root@localhost',
+        mail_from    => 'bareos@localhost',
+    }
   }
 
   bareos::director::job {
