@@ -249,5 +249,12 @@ class bareos::director {
     max_concurrent => $::bareos::storage_max_concurrent,
   }
 
-  bareos::director::catalog { 'MyCatalog': }
+  bareos::director::catalog { 'MyCatalog':
+    db_driver   => $::bareos::db_driver,
+    db_address  => $::bareos::db_address,
+    db_port     => $::bareos::db_port,
+    db_name     => $::bareos::db_name,
+    db_user     => $::bareos::db_user,
+    db_password => $::bareos::db_password,
+  }
 }

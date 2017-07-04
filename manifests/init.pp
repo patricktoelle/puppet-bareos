@@ -127,6 +127,14 @@ class bareos (
   $storages                = {},
 
   $storage_devices         = {},
+
+  $db_driver               = 'mysql',
+  $db_address              = 'localhost',
+  $db_port                 = '',
+  $db_name                 = 'bareos',
+  $db_user                 = 'bareos',
+  $db_password             = '',
+
   ) inherits bareos::params {
 
   $bool_source_dir_purge=any2bool($source_dir_purge)
