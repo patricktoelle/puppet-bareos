@@ -62,4 +62,7 @@ Job {
 <% if @dir_plugin_options != '' -%>
   DIR Plugin Options = "<%= @dir_plugin_options %>"
 <% end -%>
+<% @options_hash.each do |k,v| -%>
+   <%= k %> = "<%= v %>"
+<% end -%>
 }
