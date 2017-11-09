@@ -302,6 +302,8 @@ class bareos (
   ### Client configuration
   if $bareos::bool_manage_client == true {
     include bareos::client
+    create_resources('@@bareos::director::client', $clients)
+    create_resources('@@bareos::director::job', $jobs)
   }
 
   ### Storage configuration
@@ -331,9 +333,7 @@ class bareos (
 
   # Parameterized definitions for hiera
   create_resources('bareos::director::catalog', $catalogs)
-  create_resources('@@bareos::director::client', $clients)
   create_resources('bareos::director::fileset', $filesets)
-  create_resources('@@bareos::director::job', $jobs)
   create_resources('bareos::director::message', $messages)
   create_resources('bareos::director::pool', $pools)
   create_resources('bareos::director::schedule', $schedules)
