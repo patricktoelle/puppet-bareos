@@ -65,6 +65,7 @@ class bareos::params {
   $client_address  = $::ipaddress
   $client_password = ''
   $client_max_concurrent = ''
+  $client_compatible = 'yes'
 
   $client_config_file = $::operatingsystem ? {
     default => "${bareos::params::config_dir}/bareos-fd.conf",

@@ -26,6 +26,7 @@ FileDaemon {
 <% end -%>
   FDAddress = <%= scope.lookupvar('bareos::client_address') %>
   Heartbeat Interval = <%= scope.lookupvar('bareos::heartbeat_interval') %>
+  Compatible = <%= scope.lookupvar('bareos::client_compatible') %>
 }
 
 Messages {

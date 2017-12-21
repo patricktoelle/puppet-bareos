@@ -43,6 +43,7 @@ class bareos (
   $client_port             = params_lookup( 'client_port' ),
   $client_max_concurrent   = params_lookup( 'client_max_concurrent' ),
   $client_address          = params_lookup( 'client_address' ),
+  $client_compatible       = params_lookup( 'client_compatible' ),
   $storage_package         = params_lookup( 'storage_package' ),
   $storage_config_file     = params_lookup( 'storage_config_file' ),
   $storage_password        = params_lookup( 'storage_password' ),
